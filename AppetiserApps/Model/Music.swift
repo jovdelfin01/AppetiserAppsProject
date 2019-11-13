@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: Music Model
+// Made the model decodable and added functions to return image urls from model
 struct Music: Decodable {
     let trackName: String?
     let artworkUrl60: String?
@@ -42,15 +44,4 @@ struct Music: Decodable {
 struct MusicResultsAPI: Decodable {
     let resultCount: Int
     let results: [Music]
-}
-
-struct sampleMusic:Decodable {
-    let artworkUrl60: String
-    let artistName: String
-    let trackName: String?
-}
-
-struct sampleRESULT: Decodable {
-    let resultCount: Int
-    let results: [sampleMusic]
 }

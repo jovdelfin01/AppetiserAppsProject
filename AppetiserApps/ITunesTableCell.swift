@@ -16,6 +16,7 @@ class ITunesTableCell: UITableViewCell {
     lazy var genre = UILabel()
     lazy var artwork = UIImageView()
     
+    // MARK: Added a Did Set function to set the data
     var music: Music? {
         didSet {
             guard let music = music else { return }
@@ -49,6 +50,7 @@ class ITunesTableCell: UITableViewCell {
         artwork.image = nil
     }
     
+    // MARK: Setup the views programatically
     fileprivate func setupViews(){
         
         artwork.backgroundColor = .gray

@@ -8,7 +8,7 @@ target 'AppetiserApps' do
   # Pods for AppetiserApps
 
 	pod 'Alamofire'
-	pod 'Kingfisher', '5.9.0'
+	pod 'Kingfisher', '5.0.0'
 
   target 'AppetiserAppsTests' do
     inherit! :search_paths

@@ -25,12 +25,6 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let userDefaults = UserDefaults.standard
-        //let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: music)
-        userDefaults.set("detail", forKey: "currentController")
-        //userDefaults.set(encodedData, forKey: "groups")
-        userDefaults.synchronize()
     }
 
     override func viewDidLoad() {
@@ -39,6 +33,7 @@ class DetailViewController: UIViewController {
         setupMusicDetail()
     }
     
+    // MARK: Setup the assigning of labels to data
     fileprivate func setupMusicDetail() {
         guard let music = music else { return }
         
@@ -48,9 +43,7 @@ class DetailViewController: UIViewController {
             trackNameLabel.text = trackName
         }
         
-        
         genreLabel.text = music.primaryGenreName
-        
         trackImageView.kf.setImage(with: music.getMusicImageUrl100())
         
         if let description = music.longDescription {

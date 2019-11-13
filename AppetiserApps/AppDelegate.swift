@@ -17,20 +17,6 @@ var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        window = UIWindow()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let controller = storyboard.instantiateInitialViewController() else { return true}
-        //window?.rootViewController = DisDentsMovieController()
-        window?.rootViewController = controller
-        
-        let name = UserDefaults.standard.string(forKey: "currentController")
-        if name == "detail" {
-            
-            guard let controller = storyboard.instantiateViewController(identifier: "DetailVC") as? DetailViewController else { return true}
-             
-             self.window?.rootViewController?.present(UINavigationController(rootViewController: controller), animated: true, completion:nil)
-        }
-        
         
         
         return true
